@@ -46,6 +46,9 @@ public class LoginPageSteps {
     	userRegistration.clickLogin();
         userRegistration.login(Email, password);
         Thread.sleep(5000);
+        userRegistration.clickLogin();
+        userRegistration.clickLogin();
+        userRegistration.clickforgot();
     }
     @Then("displays registered changed successfully")
     public void displays_registered_changed_successfully() {

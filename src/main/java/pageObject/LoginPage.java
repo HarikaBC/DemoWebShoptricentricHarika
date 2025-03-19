@@ -19,11 +19,11 @@ public class LoginPage {
     public By loginButton = By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[5]/input");
     public By name=By.id("FirstName");
     public By lname=By.id("LastName");
-
+    public By fpassword=By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]/div[2]/div[2]/form/div[4]/span/a");
     public By confirmPasswordField = By.id("ConfirmPassword");
     public By submitregisterButton = By.id("register-button");
     public By registerMessage = By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/div[1]");
-
+    public By recoverbutton=By.xpath("/html/body/div[4]/div[1]/div[4]/div[2]/div/div[2]/form/div[2]/input");
     // **Constructor**
     public LoginPage(WebDriver driver, WebDriverWait wait) {
         this.driver = driver;
@@ -54,6 +54,14 @@ public class LoginPage {
     // **Method: Click on Login**
     public void clickLogin() throws InterruptedException {
         wait.until(ExpectedConditions.elementToBeClickable(loginLink)).click();
+        Thread.sleep(2000);
+    }
+    public void clickforgot() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(fpassword)).click();
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(emailField)).sendKeys("xyzltygmno@gmail.com");
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.elementToBeClickable(recoverbutton)).click();
         Thread.sleep(2000);
     }
 
